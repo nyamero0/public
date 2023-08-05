@@ -19,9 +19,9 @@ class StudentRecord(object):
         def gradeLevelIter():
             nonlocal gradeLevel
             gradeLevel = int(input2(promptFormat%"grade level", "^\d+$",f"Invalid Input, (hint) input must: only contain digit characters, and be within the range of {StudentRecord.GRADE_LOWER_BOUND} to {StudentRecord.GRADE_UPPER_BOUND}\n"))
-            return not (gradeLevel < StudentRecord.GRADE_LOWER_BOUND or gradeLevel > StudentRecord.GRADE_UPPER_BOUND)
+            return gradeLevel < StudentRecord.GRADE_LOWER_BOUND or gradeLevel > StudentRecord.GRADE_UPPER_BOUND
         try:
-            for _ in iter(gradeLevelIter, True):
+            for _ in iter(gradeLevelIter, False):
                 sys.stderr.write(f"Invalid Grade Level, (hint) input must be within the range of {StudentRecord.GRADE_LOWER_BOUND} to {StudentRecord.GRADE_UPPER_BOUND}\n")
         except StopIteration:
             pass
