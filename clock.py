@@ -64,8 +64,6 @@ class Clock(object):
             pen.goto(x * Clock.lengthEnum[i], y * Clock.lengthEnum[i])
             pen.penup()
             pen.home()
-        # self.pen.screen.onkey(self.tickForever,"space")
-        # self.pen.screen.listen()s
     def clear(self):
         self.pen.clear()
     def updateHand(self, handName : str, value : (int, (int | float))):
@@ -81,24 +79,7 @@ class Clock(object):
         pen.pendown()
     def clearHand(self, handName : str):
         self.handPens[handName][0].clear()
-    # def tickForever(self):
-    #     sleep = __import__("time").sleep
-    #     hour, min, sec = self.hour + self.minute / 60, self.minute, self.sec
-    #     while True:
-    #         while sec < 60:
-    #             self.updateHand("second", (sec, Clock.secHandLength))
-    #             sleep(0.0125)
-    #             sec += 1
-    #         min += 1
-    #         hour += 1 / 60
-    #         if min >= 60:
-    #             min = 0
-    #         elif min % 5 == 0:
-    #             if hour >= 12:
-    #                 hour = 0
-    #         self.updateHand("minute", (min, Clock.minHandLength))
-    #         self.updateHand("hour",(hour,Clock.hourHandLength))
-    #         sec = 0
+
 def main():
     clock = Clock(9, 15, 0)
     clock.draw()
