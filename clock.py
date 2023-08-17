@@ -44,7 +44,7 @@ class Clock(object):
         self.pen.home()
         self.pen.pensize(3)
         tempEnum = ("12", "3", "6", "9")
-        paddingEnum = [(0, -26),(-10,-14.5),(0,0),(12,-14.5)]
+        paddingEnum = [(0, -27),(-10,-14.5),(0,-2),(12,-14.5)]
         for i in range(4):
             x, y = Clock.ratioToSlope(i / 2)
             self.pen.penup()
