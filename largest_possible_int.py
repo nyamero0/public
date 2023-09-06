@@ -38,12 +38,12 @@ def main():
     arr = [input2(f"Number {i}: ","^\d$","Invalid Input, must only have a single digit character\n") for i in range(1, 6)]
     print()
     print("output if inputs are a string, (uses sortInt())")
-    print(f"largest: {largestPossibleInt(arr)}", f"smallest: {smallestPossibleInt(arr)}")
+    print(f"largest: {largestPossibleInt(arr):,}", f"smallest: {smallestPossibleInt(arr):,}")
     print()
 
     arr_int = list(map(int, arr))
     print("output if inputs are an integer, (uses sortInt2())")
-    print(f"largest: {largestPossibleInt2(arr_int)}", f"smallest: {smallestPossibleInt2(arr_int)}")
+    print(f"largest: {largestPossibleInt2(arr_int):,}", f"smallest: {smallestPossibleInt2(arr_int):,}")
 
 
 if __name__ == "__main__":
