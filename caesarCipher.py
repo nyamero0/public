@@ -94,7 +94,7 @@ import re
 def modifiedInput():
     inp = input("Password:")
     while re.match("^(?=.*\d)(?=.*[A-Z])[A-Z0-9]{7,15}$", inp) == None:
-        print("must contain a lowercase, an uppercase and a digit")
+        print("must contain an uppercase and a digit")
         inp = input("Password:")
     return inp
 def main():
