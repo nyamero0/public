@@ -20,7 +20,7 @@ simpleEncryptionMap = [
     B = 8,
     ...
 ]
-FUNCTION subsititute(text):
+FUNCTION substitute(text):
     result = ""
     FOR character IN text:  # comment # takes each character from the text
 
@@ -39,5 +39,5 @@ FUNCTION subsititute(text):
         # comment # the result should look like this 7@^3?@(S
     END FOR LOOP
     RETURN result
-DISPLAY subsititute("LOVEYOU2");
+DISPLAY substitute("LOVEYOU2");
     7@^3?@(S
