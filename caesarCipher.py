@@ -65,7 +65,7 @@ def translatedEncrypt(plaintext:str):
 	return plaintext.translate(str.maketrans(caesarEncryptMap))
 def translatedDecrypt(plaintext:str):
 	return plaintext.translate(str.maketrans(caesarDecryptMap))
-# concise vresion #
+# concise version #
 
 
 
