@@ -90,14 +90,21 @@ def translatedEncryptAndDecryptTestCase(plaintext):
 def expandedEncryptAndDecryptTestCase(plaintext):
     return testCase(plaintext, expandedEncrypt, expandedDecrypt)
 # Test Cases #
-
+import re
+def modifiedInput():
+    inp = input("Password:")
+    while re.match("^(?=.*\d)(?=.*[A-Z])[A-Z0-9]{7,15}$", inp) == None:
+        print("must contain a lowercase, an uppercase and a digit")
+        inp = input("Password:")
+    return inp
 def main():
-    test_case = "LOVEYOU2"
+    # test_case = "LOVEYOU2"
+    user_input = modifiedInput()
     # loopedEncryptAndDecryptTestCase(test_case)
     # translatedEncryptAndDecryptTestCase(test_case)
 
     # go to comment with `main functions` for the used function in this test case
-    expandedEncryptAndDecryptTestCase(test_case)
+    expandedEncryptAndDecryptTestCase(user_input)
 
 
 if __name__ == "__main__":
