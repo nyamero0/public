@@ -103,7 +103,7 @@ def main():
     # loopedEncryptAndDecryptTestCase(test_case)
     # translatedEncryptAndDecryptTestCase(test_case)
 
-    # go to comment with `main functions` for the used function in this test case
+    # go to comment with `main functions` for the used functions in this test case
     expandedEncryptAndDecryptTestCase(user_input)
 
 
