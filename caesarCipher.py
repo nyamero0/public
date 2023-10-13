@@ -1,24 +1,24 @@
 import string
 import random
 normalText = string.ascii_uppercase + string.digits
-def makeCaesarMap(rotation):
-    rotation %= len(normalText)
-    caesarMap = normalText[rotation:] + normalText[:rotation]
+def makeCaesarMap(shift):
+    shift %= len(normalText)
+    caesarMap = normalText[shift:] + normalText[:shift]
     return caesarMap
 def makeTranslation(keys, values):
     return str.maketrans(dict(zip(keys,values)))
-def encrypt(plaintext : str,rotation = random.randrange(36)):
-    caesarMap = makeCaesarMap(rotation)
+def encrypt(plaintext : str,shift = random.randrange(36)):
+    caesarMap = makeCaesarMap(shift)
     encrypted = plaintext.translate(makeTranslation(normalText, caesarMap))
-    return (encrypted,rotation)
-def decrypt(encryptedText, rotation):
-    caesarMap = makeCaesarMap(rotation)
+    return (encrypted,shift)
+def decrypt(encryptedText, shift):
+    caesarMap = makeCaesarMap(shift)
     decrypted = encryptedText.translate(makeTranslation(caesarMap, normalText))
     return decrypted
 
 class CeasarMap:
-    def __init__(self, rotation):
-        caesarMap = makeCaesarMap(rotation)
+    def __init__(self, shift):
+        caesarMap = makeCaesarMap(shift)
         self.encryptMap = makeTranslation(normalText, caesarMap)
         self.decryptMap = makeTranslation(caesarMap, normalText)
     def encrypt(self, plaintext : str):
