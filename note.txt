@@ -1,0 +1,43 @@
+we make a simple caesar cipher by creating a map,
+this map contains the real text value as the map's key and map it with the
+desired encrypted value (e.g A = V, B = 8, ...) and so
+the expected output of encrypt("AB") should be "V8" and if we want
+to decrypt it we'll just take the encrypted value of the encryption map
+as the decrytion map's key and take the real text value as the map's value
+(e.g V = A, 8 = B), essentially just reversing the encrypting pattern making
+the encryption and decryption have the same subtitution pattern and so...
+in this code we named our verbosed function as
+`expandedEncrypt` for encryption and `expandedDecrypt` for decryption...
+the main pattern would go something like this, the function would declare a [string] variable
+for the result, make a for loop in which the for loop indexes through the plaintext,
+taking each single character, and these characters will then try to find its encrypted value
+on the encryption map, (e.g if the character is "A" then the map should return "V"),
+the returned value will then be concatenated with the result[string variable], and the process
+repeats within the for loop, after the loop ended the function will then return the result,
+here is a pseudocode for the substitution/cipher process:
+simpleEncryptionMap = [
+    A = V,
+    B = 8,
+    ...
+]
+FUNCTION subsititute(text):
+    result = ""
+    FOR character IN text:  # comment # takes each character from the text
+
+        result = result + simpleMap[character]
+
+        # comment # assuming text value is LOVEYOU2
+        # comment # the simpleMap yields should look like this
+        # comment # simpleMap[L] = 7
+        # comment # simpleMap[O] = @
+        # comment # simpleMap[V] = ^
+        # comment # simpleMap[E] = 3
+        # comment # simpleMap[Y] = ?
+        # comment # simpleMap[O] = @
+        # comment # simpleMap[U] = (
+        # comment # simpleMap[2] = S
+        # comment # the result should look like this 7@^3?@(S
+    END FOR LOOP
+    RETURN result
+DISPLAY subsititute("LOVEYOU2");
+    7@^3?@(S
