@@ -1,4 +1,4 @@
-we make a simple caesar cipher by creating a map,
+we make a simple substitution cipher by creating a map,
 this map contains the real text value as the map's key and map it with the
 desired encrypted value (e.g A = V, B = 8, ...) and so
 the expected output of encrypt("AB") should be "V8" and if we want

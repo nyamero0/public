@@ -1,5 +1,5 @@
 
-caesarEncryptMap = {
+substitutionEncryptMap = {
     "A" : "V",
     "B" : "8",
     "C" : "2",
@@ -36,7 +36,7 @@ caesarEncryptMap = {
     "8" : "$",
     "9" : "Q"
 }
-caesarDecryptMap = {value:key for key,value in caesarEncryptMap.items()}
+substitutionDecryptMap = {value:key for key,value in substitutionEncryptMap.items()}
 
 
 
@@ -45,12 +45,12 @@ caesarDecryptMap = {value:key for key,value in caesarEncryptMap.items()}
 def expandedEncrypt(plaintext : str):
     result = ""
     for i in plaintext:
-        result += caesarEncryptMap[i]
+        result += substitutionEncryptMap[i]
     return result
 def expandedDecrypt(plaintext : str):
     result = ""
     for i in plaintext:
-        result += caesarDecryptMap[i]
+        result += substitutionDecryptMap[i]
     return result
 
 # main functions #
@@ -58,13 +58,13 @@ def expandedDecrypt(plaintext : str):
 
 # concise version #
 def loopedEncrypt(plaintext : str ):
-    return "".join([caesarEncryptMap[i] for i in plaintext])
+    return "".join([substitutionEncryptMap[i] for i in plaintext])
 def loopedDecrypt(plaintext : str):
-    return "".join([caesarDecryptMap[i] for i in plaintext])
+    return "".join([substitutionDecryptMap[i] for i in plaintext])
 def translatedEncrypt(plaintext:str):
-	return plaintext.translate(str.maketrans(caesarEncryptMap))
+	return plaintext.translate(str.maketrans(substitutionEncryptMap))
 def translatedDecrypt(plaintext:str):
-	return plaintext.translate(str.maketrans(caesarDecryptMap))
+	return plaintext.translate(str.maketrans(substitutionDecryptMap))
 # concise version #
 
 
@@ -94,7 +94,7 @@ import re
 def modifiedInput():
     inp = input("Password:")
     while re.match("^(?=.*\d)(?=.*[A-Z])[A-Z0-9]{7,15}$", inp) == None:
-        print("must contain an uppercase and a digit")
+        print("must be at least 7 characters, contains an uppercase and a digit, and must not exceed 15 characters")
         inp = input("Password:")
     return inp
 def main():
